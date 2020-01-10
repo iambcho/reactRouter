@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/Home';
 import UserProfile from './components/UserProfile';
 import Debits from './components/Debits';
-
+import AccountBalance from "./components/AccountBalance"
 
 class App extends Component {
 
@@ -26,13 +26,14 @@ class App extends Component {
         <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
     );
     const DebitsComponent = () => (<Debits />)
-
+    const AccountBalanceComponent = () => <AccountBalance accountBalance={this.state.accountBalance}/>
     return (
         <Router>
           <div>
             <Route exact path="/" render={HomeComponent}/>
             <Route exact path="/userProfile" render={UserProfileComponent}/>
             <Route exact path="/debits" render={DebitsComponent}/>
+            <Route path="/" render={AccountBalanceComponent} />
           </div>
         </Router>
     );
