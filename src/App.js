@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/Home';
 import UserProfile from './components/UserProfile';
+import Debits from './components/Debits';
+
 
 class App extends Component {
 
@@ -23,12 +25,14 @@ class App extends Component {
     const UserProfileComponent = () => (
         <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
     );
+    const DebitsComponent = () => (<Debits />)
 
     return (
         <Router>
           <div>
             <Route exact path="/" render={HomeComponent}/>
             <Route exact path="/userProfile" render={UserProfileComponent}/>
+            <Route exact path="/debits" render={DebitsComponent}/>
           </div>
         </Router>
     );
