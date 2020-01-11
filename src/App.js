@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Home from './components/Home';
+import Home from './components/home';
 import UserProfile from './components/UserProfile';
 import Debits from './components/Debits';
 import AccountBalance from "./components/AccountBalance"
@@ -48,7 +48,8 @@ class App extends Component {
     const {debits, accountBalance } = this.state
     const description  = e.target[0].value
     const amount  = Number(e.target[1].value)
-    const newDebit = [{description, amount}]
+    const date = e.target[2].value
+    const newDebit = [{description, amount, date}]
     this.setState({debits: debits.concat(newDebit), accountBalance: accountBalance - amount})
 }
 
@@ -57,7 +58,8 @@ addCredit(e) {
   const {credits, accountBalance } = this.state
   const description  = e.target[0].value
   const amount  = Number(e.target[1].value)
-  const newCredit = [{description, amount}]
+  const date = e.target[2].value
+  const newCredit = [{description, amount, date}]
   this.setState({credits: credits.concat(newCredit), accountBalance: accountBalance + amount})
 }
 
