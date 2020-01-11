@@ -1,5 +1,6 @@
 
 import React from "react"
+import { Link } from "react-router-dom"
 
 class Credits extends React.Component {
 
@@ -22,6 +23,18 @@ class Credits extends React.Component {
                 Date: <input type="date" name="date" />&nbsp;
                 <button type="submit">Add Credit</button>
             </form>
+
+                <br/>
+                <br/>
+                <Link to="/">Return to Home</Link>
+                <br/>
+                <Link to="/login">Log in</Link>
+                <br/>
+                <Link to="/userProfile">User Profile</Link>
+                <br/>
+                <Link to="/debits">Debits</Link>
+                <br/>
+                <Link to="/credits">Credits</Link>
         </div>
     }
 }
