@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import AccountBalance from './AccountBalance';
+import AccountBalance from './accountBalance';
 import {Link, Route} from 'react-router-dom';
 
 class Home extends Component {
@@ -7,7 +7,7 @@ class Home extends Component {
     return (
      
         <div>
-          {/* <img src="https://letstalkpayments.com/wp-content/uploads/2016/04/Bank.png" alt="bank"/> */}
+          { <img src="http://images.clipartpanda.com/money-clip-art-money-clipart71.jpg" alt="bank"/>}
           <h1>Bank of React</h1>
 
           <Link to="/login">Log in</Link>
