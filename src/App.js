@@ -5,6 +5,7 @@ import UserProfile from './components/UserProfile';
 import Debits from './components/Debits';
 import AccountBalance from "./components/AccountBalance"
 import Credits from "./components/Credits"
+import LogIn from "./components/Login"
 import axios from "axios"
 
 class App extends Component {
@@ -60,6 +61,12 @@ addCredit(e) {
   this.setState({credits: credits.concat(newCredit), accountBalance: accountBalance + amount})
 }
 
+mockLogIn = (logInInfo) => {
+  const newUser = {...this.state.currentUser}
+  newUser.userName = logInInfo.userName
+  this.setState({currentUser: newUser})
+}
+
   render() {
     const { debits, credits } = this.state
     const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
@@ -69,10 +76,13 @@ addCredit(e) {
     const DebitsComponent = () => (<Debits addDebit={this.addDebit} debits={debits} />)
     const AccountBalanceComponent = () => <AccountBalance accountBalance={this.state.accountBalance}/>
     const CreditsComponent = () => <Credits addCredit={this.addCredit} credits={credits} />
+    const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
+    
     return (
         <Router>
           <div>
             <Route exact path="/" render={HomeComponent}/>
+            <Route exact path="/login" render={LogInComponent}/>
             <Route exact path="/userProfile" render={UserProfileComponent}/>
             <Route exact path="/debits" render={DebitsComponent}/>
             <Route exact path="/credits" render={CreditsComponent}/>
