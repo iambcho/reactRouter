@@ -12,12 +12,14 @@ class Credits extends React.Component {
 
     render() {
         const { addCredit } = this.props
-        return <div>CREDITS
+        return <div>
+            <h1>CREDITS</h1>
             {this.CreditsView()}
+            <br/>
             <form action="#" onSubmit={addCredit}>
-                Description<input type="text" name="description" /> 
-                Amount <input type="number" name="amount" />
-                Date <input type="date" name="date" />
+                Description: <input type="text" name="description" />&nbsp;
+                Amount: <input type="number" name="amount" />&nbsp;
+                Date: <input type="date" name="date" />&nbsp;
                 <button type="submit">Add Credit</button>
             </form>
         </div>

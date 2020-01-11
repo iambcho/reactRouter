@@ -21,12 +21,14 @@ class Debits extends React.Component {
 
     render() {
         const { addDebit } = this.props
-        return <div>DEBIT
+        return <div>
+            <h1>DEBIT</h1>
             {this.debitsView()}
+            <br/>
             <form action="#" onSubmit={addDebit}>
-                Description<input type="text" name="description" /> 
-                Amount <input type="number" name="amount" />
-                Date <input type="date" name="date" />
+                Description: <input type="text" name="description" />&nbsp;
+                Amount: <input type="number" name="amount" />&nbsp;
+                Date: <input type="date" name="date" />&nbsp;
                 <button type="submit">Add Debit</button>
             </form>
         </div>
