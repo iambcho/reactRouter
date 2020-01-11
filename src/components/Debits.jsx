@@ -15,7 +15,7 @@ class Debits extends React.Component {
         const { debits } = this.props;
         debugger
         return debits.map((debit) => {
-            return <li key={debit.id}>{debit.amount} {debit.description}</li>
+        return <li key={debit.id}>{debit.amount} {debit.description} {debit.date}</li>
         }) 
     }
 
@@ -26,6 +26,7 @@ class Debits extends React.Component {
             <form action="#" onSubmit={addDebit}>
                 Description<input type="text" name="description" /> 
                 Amount <input type="number" name="amount" />
+                Date <input type="date" name="date" />
                 <button type="submit">Add Debit</button>
             </form>
         </div>
