@@ -5,6 +5,7 @@ class AccountBalance extends Component {
     return (
         <div>
           <br/>
+          <h3>Account Balance</h3>
           Balance: {this.props.accountBalance}
         </div>
     );

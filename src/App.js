@@ -7,6 +7,7 @@ import AccountBalance from "./components/AccountBalance"
 import Credits from "./components/Credits"
 import LogIn from "./components/Login"
 import axios from "axios"
+import './App.css';
 
 class App extends Component {
 
@@ -82,7 +83,8 @@ mockLogIn = (logInInfo) => {
     
     return (
         <Router>
-          <div>
+        <div className="App">
+        <div className="App-header">
             <Route exact path="/" render={HomeComponent}/>
             <Route exact path="/login" render={LogInComponent}/>
             <Route exact path="/userProfile" render={UserProfileComponent}/>
@@ -90,6 +92,8 @@ mockLogIn = (logInInfo) => {
             <Route exact path="/credits" render={CreditsComponent}/>
             <Route path="/" render={AccountBalanceComponent} />
           </div>
+          </div>
+
         </Router>
     );
   }
